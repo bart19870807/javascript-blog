@@ -48,3 +48,32 @@ for(let link of links){
 }
 // petla for w ktorej dokonuje się iteracja links która przypisana jest do zmiennej link
 // po wybraniu i kliknięci linku wykonywana jest funkcja która wyświetla komunikat
+const optArticleSelector = '.post',
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
+
+    function generateTitleLinks() {
+         
+        /* remove contents of titleList */
+        const titleList = document.querySelector(optTitleListSelector).innerHTML = '';
+        console.log(titleList);
+
+        /* for each article */
+        const articles = document.querySelectorAll('.post');
+        for(let article of articles);
+
+        /* get the article id */
+        const articleId = this.getAttribute('id');
+        console.log(articleId);
+
+        /* find the title element */
+        const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+
+        /* get the title from the title element */
+        
+        /* create HTML of the link */
+        const linkHTML ='<li><a href="# ' + articleId +' "><span>' + articleTitle + '</span></a></li>';
+        console.log(linkHTML);
+        /* insert link into titleList */
+    }
+    generateTitleLinks();
