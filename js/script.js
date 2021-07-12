@@ -60,10 +60,12 @@ const optArticleSelector = '.post',
 
         /* for each article */
         const articles = document.querySelectorAll('.post');
-        for(let article of articles);
+        
+        let html = "";
+        for(let article of articles){
 
         /* get the article id */
-        const articleId = this.getAttribute('id');
+        const articleId = article.getAttribute('id');
         console.log(articleId);
 
         /* find the title element */
@@ -75,5 +77,10 @@ const optArticleSelector = '.post',
         const linkHTML ='<li><a href="# ' + articleId +' "><span>' + articleTitle + '</span></a></li>';
         console.log(linkHTML);
         /* insert link into titleList */
+        
+        html = html + linkHTML;
     }
+    console.log(html);
+    titleList.innerHTML = html;
+}
     generateTitleLinks();
