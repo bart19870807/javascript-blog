@@ -41,21 +41,18 @@ const titleClickHandler = function(event){
     targetArticle.classList.add('active');
 }
 // funkcja która wypisuje nam w konsoli informację że link został klikniety
-const links = document.querySelectorAll('.titles a');
-// stała links w której wybieramy wszystkie selectory title a
-for(let link of links){
-    link.addEventListener('click', titleClickHandler);
-}
-// petla for w ktorej dokonuje się iteracja links która przypisana jest do zmiennej link
-// po wybraniu i kliknięci linku wykonywana jest funkcja która wyświetla komunikat
+
 const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles';
 
+    
+
     function generateTitleLinks() {
          
         /* remove contents of titleList */
-        const titleList = document.querySelector(optTitleListSelector).innerHTML = '';
+        const titleList = document.querySelector(optTitleListSelector);
+        titleList.innerHTML = "";
         console.log(titleList);
 
         /* for each article */
@@ -77,10 +74,23 @@ const optArticleSelector = '.post',
         const linkHTML ='<li><a href="# ' + articleId +' "><span>' + articleTitle + '</span></a></li>';
         console.log(linkHTML);
         /* insert link into titleList */
-        
+        const links = document.querySelectorAll('.titles a');
+        console.log(links);
+        // stała links w której wybieramy wszystkie selectory title a
+        for(let link of links){
+        link.addEventListener('click', titleClickHandler);
+        }
+        // petla for w ktorej dokonuje się iteracja links która przypisana jest do zmiennej link
+        // po wybraniu i kliknięci linku wykonywana jest funkcja która wyświetla komunikat
         html = html + linkHTML;
+                    
     }
+    
     console.log(html);
     titleList.innerHTML = html;
+    
 }
-    generateTitleLinks();
+
+
+
+generateTitleLinks();
