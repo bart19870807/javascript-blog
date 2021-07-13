@@ -7,6 +7,8 @@ body{
 
 $color-light: #fff;
 $color-dark: #444;
+$color-pink:#ffc8dd;
+$color-blue:#bde0fe;
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -62,9 +64,17 @@ body {
 .sidebar, .posts {
   background: $color-light;
   margin-right: 10px;
+  margin-top: 20px;
   padding: 40px;
   border: 1px solid $color-dark;
   border-radius: 5px;
+}
+section{
+  background: $color-pink!important;
+}
+aside {
+  background: $color-blue!important;
+  text-align: center;
 }
 
 /* Logo */
@@ -91,7 +101,11 @@ body {
 .list-horizontal {
   li {
     display: inline-block;
-  }
+    }
+}
+.post-tags {
+  text-align: center;
+  max-width: 100%;
 }
 
 /* Authors */
@@ -116,8 +130,54 @@ body {
 }
 
 .post-tags {
-  display: flex;
+  display: inline;
   p {
     margin: 0 10px 0 0;
+  }
+}
+.post-tags {
+  a{
+    color: #fff;
+    font-weight: 700;
+  }
+}
+.list a {
+  text-decoration: none;
+  text-align: center;
+}
+.tags a{
+  color: #444;
+}
+
+span{
+  text-decoration: none;
+  color:#444
+}
+@media (max-width: 768px) {
+  span{
+    font-size: 10px;
+  }
+  .sidebar {
+    text-align: center;
+    
+    
+  }
+  .posts {
+    text-align: center;
+    padding: 40px 40px;
+    
+    
+  }
+  .wrapper {
+    display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  }
+  .logo {
+    margin: 0 0;
+    padding: 30px 0;
+  }
+  .post-content p {
+    margin: 0 10px 10px 1rem;
   }
 }
