@@ -50,7 +50,7 @@ const optArticleSelector = '.post',
     
 
 function generateTitleLinks() {
-         
+
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML = '';
@@ -97,6 +97,7 @@ generateTitleLinks();
 function generateTags() {
 /* find all articles */
   const articles = document.querySelectorAll('.post');
+  console.log(articles);
   /* START LOOP: for every article: */
   for(let article of articles) {
   /* find tags wrapper */
@@ -105,13 +106,9 @@ function generateTags() {
     /* make html variable with empty string */
     let html = '';
     /* get tags from data-tags attribute */
-    const articleTags = optWrapTags.getAttribute('data-tags');
+    const articleTags = article.getAttribute('data-tags');
     console.log(articleTags);
   }
-  
-
- 
-
   
 
   /* split tags into array */
