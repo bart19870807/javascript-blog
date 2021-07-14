@@ -104,14 +104,15 @@ function generateTags() {
     console.log(optWrapTags);
     /* make html variable with empty string */
     let html = '';
-
-
+    /* get tags from data-tags attribute */
+    const articleTags = optWrapTags.getAttribute('data-tags');
+    console.log(articleTags);
   }
   
 
  
 
-  /* get tags from data-tags attribute */
+  
 
   /* split tags into array */
 
