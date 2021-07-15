@@ -130,21 +130,25 @@ function generateTags() {
 
 
   /* END LOOP: for every article: */
+  for(let tag of articleTagsArray){
+  tag.addEventListener('click', generateTitleLinks);
+  }
 }
 
 generateTags();
 
 function tagClickHandler(event){
   /* prevent default action for this event */
-  event.preventDefault();
+  // event.preventDefault();
   /* make new constant named "clickedElement" and give it the value of "this" */
   const clickedElement = this;
-  // console.log(clickedElement);
+  console.log(clickedElement);
   /* make a new constant "href" and read the attribute "href" of the clicked element */
   const href = clickedElement.getAttribute('href');
   console.log(href);
   /* make a new constant "tag" and extract tag from the "href" constant */
-
+  const tag = href.getAttribute('tag');
+  console.log(tag);
   /* find all tag links with class active */
 
   /* START LOOP: for each active tag link */
