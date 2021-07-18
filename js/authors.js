@@ -1,9 +1,11 @@
-// const optArticleAuthorsSelector = '.post-authors';
+const optArticleAuthorsSelector = '.post';
 
-// function generateAuthors() {
-//   const authors = document.querySelectorAll('.post-authors');
-//   for(let x of authors) {
-//    const optAuthorsPosition = x.querySelector(.)
-//   }
-  
-// }
+function generateAuthors() {
+  const authors = document.querySelector('.post');
+  console.log(authors);
+//   let html = '';
+  const authorsTag = this.getAttribute('data-author');
+  console.log(authorsTag);
+
+}
+generateAuthors();
