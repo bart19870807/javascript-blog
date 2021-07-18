@@ -152,25 +152,25 @@ function tagClickHandler(event){
   const href = clickedElement.getAttribute('href');
   console.log(href);
   // /* make a new constant "tag" and extract tag from the "href" constant */
-  const tag = href.replace("#tag-", "");
+  const tag = href.replace('#tag-', '');
   console.log(tag);
   /* find all tag links with class active */
-  const tagActive = document.querySelectorAll('.post .activ');
-  console.log(tagActive);
-
-  for(let tagActives of tagActive) {
+  const tagActives = document.querySelectorAll('a.active[href^="#tag-"]');
+  console.log(tagActives);
+  /* START LOOP: for each active tag link */
+  /* remove class active */
+  for(let tagActive of tagActives) {
     tagActive.classList.remove('active');
   }
-
-  /* START LOOP: for each active tag link */
-
-  /* remove class active */
-
   /* END LOOP: for each active tag link */
 
   /* find all tag links with "href" attribute equal to the "href" constant */
 
   /* START LOOP: for each found tag link */
+  const tagActivesAdded = document.querySelectorAll('href');
+  for(let tagActivesAddeds of tagActivesAdded) {
+    tagActivesAddeds.classList.add('active');
+  }
 
   /* add class active */
 
