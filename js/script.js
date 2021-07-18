@@ -180,15 +180,16 @@ function tagClickHandler(event){
 
 function addClickListenersToTags(){
   /* find all links to tags */
-  const linkss = this;
-  const href = linkss.getAttribute('href');
-  console.log(href);
-  const tag = href.replace('#tag-', '');
-  console.log(tag);
+  const tagLinks = document.querySelectorAll('.post .list a');
+  console.log(tagLinks);
   /* START LOOP: for each link */
-  for(let x of tag) {
-    x.addEventListener('click', tagClickHandler);
+  for(let link of tagLinks) {
+    link.addEventListener('click',tagClickHandler);
   }
+
+  // 1.stała tagLinnks - wybieramy wszystkie elementy z aricle o klasie post z ul o klasie list wybieramy wszystkie a
+  // 2. petla for- z wszystkich linków (tagLinks) wybierany jest jeden (link)
+  // 3. nasłuchujemy zdarzenia - po kliknięciu w tag wywoływana jest funkcja tagClickHandler 
 
   /* add tagClickHandler as event listener for that link */
 
