@@ -119,7 +119,7 @@ function generateTags() {
       /* generate HTML of the link */
       const linkHTML = '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li>';
       html = html + linkHTML;
-      // console.log(linkHTML);
+      console.log(linkHTML);
   
     /* add generated code to HTML variable */
     }
@@ -197,3 +197,29 @@ function addClickListenersToTags(){
 }
 
 addClickListenersToTags();
+
+
+function generateAuthors() {
+  const authors = document.querySelectorAll('.post');
+  console.log(authors);
+  for(let author of authors){
+    const optWrapAuthors = author.querySelector('.post .post-author');
+    console.log(optWrapAuthors);
+    const authorsTag = author.getAttribute('data-author');
+    console.log(authorsTag);
+    let html = '';
+    const linkHTML = '<li><a href="#tag-'+ authorsTag +'"></a></li>';
+    html = html + linkHTML;
+    console.log(html);
+    // console.log(linkHTML);
+    optWrapAuthors.innerHTML = html;  
+  }
+  const tagAuthorsLinks = document.querySelectorAll('.sidebar .authors a');
+  console.log(tagAuthorsLinks);
+  for(let link of tagAuthorsLinks){
+    link.addEventListener('click', titleClickHandler);
+  }
+
+
+}
+generateAuthors();
