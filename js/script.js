@@ -1,4 +1,6 @@
 'use strict';
+
+
 // document.getElementById('test-button').addEventListener('click',function(){
 //     const links = document.querySelectorAll('.titles a');
 //     console.log('links:', links);
@@ -214,34 +216,31 @@ function generateAuthors() {
     // console.log(linkHTML);
     optWrapAuthors.innerHTML = html;  
   }
-  const tagAuthorsLinks = document.querySelectorAll('.sidebar .autho');
+  const tagAuthorsLinks = document.querySelectorAll('.sidebar .authors');
   console.log(tagAuthorsLinks);
-  for(let link of tagAuthorsLinks){
-    link.addEventListener('click', titleClickHandler);
-    console.log(link);
-  }
-
-
 }
 generateAuthors();
 
-
-function addClickListenerAuthors() {
-  const tagAuthorsLinks = document.querySelectorAll('.sidebar .authors a');
-  console.log(tagAuthorsLinks);
-  for(let link of tagAuthorsLinks){
-  link.addEventListener('click', titleClickHandler);
-  console.log(link);
-}
-}
-addClickListenerAuthors();
-
 function authorClickHandler(event){
+  event.preventDefault();
   const clickedElement = this;
   console.log(clickedElement);
   const href = clickedElement.getAttribute('href');
   console.log(href);
   const tag = href.replace('#author-', '');
-  console.log(tag);    
+  console.log(tag);
+  generateTitleLinks('[data-author="' + tag + '"]');    
 }
-authorClickHandler('[data-author="' + tag + '"]');
+
+
+function addClickListenerAuthors() {
+  const tagAuthorsLinks = document.querySelectorAll('.posts .post-author a');
+  console.log(tagAuthorsLinks);
+  for(let link of tagAuthorsLinks){
+    link.addEventListener('click', titleClickHandler);
+    console.log(link);
+}
+}
+addClickListenerAuthors();
+
+
