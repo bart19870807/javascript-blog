@@ -41,6 +41,8 @@
 // };
 
 function generateAuthors() {
+  /* [NEW] create a new variable allTags with an empty array */
+  let allTags = [];
   const authors = document.querySelectorAll('.post');
   console.log(authors);
   for(let author of authors){
@@ -54,6 +56,16 @@ function generateAuthors() {
     console.log(html);
     // console.log(linkHTML);
     optWrapAuthors.innerHTML = html;  
+    /* [NEW] check if this link is NOT already in allTags */
+    if(allTags.indexOf(linkHTML) == -1){
+      /* [NEW] add generated code to allTags array */
+      allTags.push(linkHTML);
+    }
+    /* [NEW] find list of tags in right column */
+  const tagList = document.querySelector('.tags');
+
+  /* [NEW] add html from allTags to tagList */
+  tagList.innerHTML = allTags.join(' ');
   }
   const tagAuthorsLinks = document.querySelectorAll('.sidebar .authors a');
   console.log(tagAuthorsLinks);
